@@ -6,7 +6,7 @@ namespace MyLeetCode.Simple.Tests
     [TestClass()]
     public class LevelOrderBottomTests
     {
-        private bool AreEqual(IList<IList<int>> expect, IList<IList<int>> target)
+        public static bool AreEqual(IList<IList<int>> expect, IList<IList<int>> target)
         {
             for (int i = 0; i < expect.Count; i++)
             {
