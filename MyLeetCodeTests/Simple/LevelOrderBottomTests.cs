@@ -1,37 +1,18 @@
 ﻿using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MyLeetCodeTests;
 
 namespace MyLeetCode.Simple.Tests
 {
     [TestClass()]
     public class LevelOrderBottomTests
     {
-        public static bool AreEqual(IList<IList<int>> expect, IList<IList<int>> target)
-        {
-            for (int i = 0; i < expect.Count; i++)
-            {
-                if (i >= target.Count) return false;
-
-                for (int j = 0; j < expect[i].Count; j++)
-                {
-                    if (j >= target[i].Count) return false;
-
-                    if (expect[i][j] != target[i][j])
-                    {
-                        return false;
-                    }
-                }
-            }
-
-            return true;
-        }
-
         [TestMethod()]
         public void Excution1Test()
         {
             var func = new LevelOrderBottom();
 
-            Assert.IsTrue(AreEqual(new List<IList<int>>
+            Assert.IsTrue(Common.AreEqual(new List<IList<int>>
             {
                 new List<int> {45},
                 new List<int> {30, 40, 15, 7},
@@ -54,7 +35,7 @@ namespace MyLeetCode.Simple.Tests
                 }
             })));
 
-            Assert.IsTrue(AreEqual(new List<IList<int>>
+            Assert.IsTrue(Common.AreEqual(new List<IList<int>>
             {
                 new List<int> {15, 7},
                 new List<int> {9, 20},
@@ -69,12 +50,12 @@ namespace MyLeetCode.Simple.Tests
                 }
             })));
 
-            Assert.IsTrue(AreEqual(new List<IList<int>>
+            Assert.IsTrue(Common.AreEqual(new List<IList<int>>
             {
                 new List<int>{3}
             }, func.Excution1(new IsSameTree.TreeNode(3))));
 
-            Assert.IsTrue(AreEqual(new List<IList<int>>
+            Assert.IsTrue(Common.AreEqual(new List<IList<int>>
             {
                 new List<int> {7},
                 new List<int> {20},
