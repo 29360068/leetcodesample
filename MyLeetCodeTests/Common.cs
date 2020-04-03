@@ -46,7 +46,7 @@ namespace MyLeetCodeTests
                 {
                     if(nums1[i] != nums2[i])
                     {
-                        break;
+                        return false;
                     }
                 }
                 return true;
